@@ -1,0 +1,240 @@
+@import '../../../scss/variables.scss';
+
+// Banner informativo
+.info-banner {
+  background: $white-transparent-overlay;
+  backdrop-filter: blur(10px);
+  border: 1px solid $white-transparent-border;
+  color: white;
+  padding: 1rem;
+  border-radius: $border-radius-small;
+  text-align: center;
+  font-weight: 500;
+}
+
+// Cards de usuario
+.user-card {
+  @include glassmorphism(0.98);
+  border-radius: $border-radius-medium;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  @include card-hover-effect;
+}
+
+// Header del usuario
+.user-header {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 1.5rem 1rem;
+  @include user-gradient;
+  color: white;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: $white-transparent-border;
+  }
+
+  .user-avatar {
+    width: 50px;
+    height: 50px;
+    background: $white-transparent-border;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .user-basic-info {
+    flex: 1;
+
+    .user-name {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .user-username {
+      margin: 0;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+  }
+}
+
+// Detalles del usuario
+.user-details {
+  padding: 1.5rem;
+  flex: 1;
+
+  .detail-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f8f9fa;
+
+    &:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .detail-label {
+      font-weight: 600;
+      color: #495057;
+      margin-right: 0.5rem;
+      min-width: 70px;
+    }
+
+    .detail-value {
+      color: #6c757d;
+      word-break: break-word;
+      flex: 1;
+    }
+  }
+}
+
+// Footer del usuario
+.user-footer {
+  padding: 1rem 1.5rem;
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  text-align: center;
+}
+
+// Estado vacío
+.empty-state {
+  text-align: center;
+  padding: 3rem 2rem;
+  @include glassmorphism;
+  border-radius: $border-radius-large;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+
+  i {
+    font-size: 4rem;
+    color: #6c757d;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    color: #495057;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: #6c757d;
+    margin-bottom: 2rem;
+  }
+}
+
+// Navbar personalizado
+.navbar-dark {
+  .navbar-nav {
+    .nav-link {
+      color: rgba(255, 255, 255, 0.8) !important;
+      font-weight: 500;
+      transition: $transition-smooth;
+
+      &:hover,
+      &.active {
+        color: #fff !important;
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+// Botones
+.btn {
+  border-radius: 25px;
+  padding: 0.8rem 2rem;
+  font-weight: 600;
+  transition: $transition-smooth;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// Progress bar personalizada
+.progress {
+  background-color: $white-transparent-border;
+  border-radius: $border-radius-small;
+
+  .progress-bar {
+    background: linear-gradient(90deg, $primary-color, $secondary-color);
+    border-radius: $border-radius-small;
+  }
+}
+
+// Animaciones
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.user-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem 0;
+  }
+
+  .header-section {
+    padding: 1rem 0;
+  }
+
+  .user-header {
+    padding: 1rem;
+    text-align: center;
+    flex-direction: column;
+
+    .user-avatar {
+      margin: 0 0 1rem 0;
+    }
+  }
+
+  .user-details {
+    padding: 1rem;
+
+    .detail-item {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .detail-label {
+        margin-bottom: 0.25rem;
+        min-width: auto;
+      }
+    }
+  }
+
+  .loading-card {
+    margin: 0 1rem;
+    padding: 2rem 1rem;
+  }
+}
