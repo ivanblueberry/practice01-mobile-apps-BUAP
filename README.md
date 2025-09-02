@@ -1,27 +1,156 @@
-# GestionUsuariosAngular
+# 📱 Gestión de Usuarios Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.11.
+Una aplicación web desarrollada con Angular 16 para la gestión y visualización de usuarios, implementando una arquitectura modular con navegación y servicios HTTP.
 
-## Development server
+## 🚀 Características Principales
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### ✨ Funcionalidades Implementadas
+- **Sistema de Navegación**: Menú de navegación responsivo con Bootstrap y Font Awesome
+- **Gestión de Usuarios**: Visualización de usuarios con datos obtenidos de API externa
+- **Arquitectura Modular**: Organización por páginas y servicios
+- **Responsive Design**: Interfaz adaptativa para diferentes dispositivos
+- **Loading States**: Indicadores de carga durante las peticiones HTTP
 
-## Code scaffolding
+### 🏗️ Estructura del Proyecto
+```
+src/
+├── app/
+│   ├── core/
+│   │   └── services/          # Servicios de la aplicación
+│   │       └── usuarios.service.ts
+│   ├── pages/                 # Módulos de páginas
+│   │   ├── home/             # Página principal
+│   │   ├── usuarios/         # Gestión de usuarios
+│   │   ├── perfil/           # Perfil de usuario
+│   │   ├── estructuras/      # Estructuras de datos
+│   │   └── documentacion/    # Documentación
+│   └── shared/               # Componentes compartidos
+├── assets/                   # Recursos estáticos
+└── scss/                     # Estilos globales
+    └── variables.scss        # Variables SCSS
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 🛠️ Tecnologías Utilizadas
+- **Framework**: Angular 16.2.11
+- **UI Framework**: Bootstrap 5.2.3
+- **Icons**: Font Awesome
+- **HTTP Client**: Angular HttpClient
+- **Routing**: Angular Router
+- **Styling**: SCSS con variables globales
+- **API**: JSONPlaceholder para datos de usuarios
 
-## Build
+## 🎯 Páginas y Funcionalidades
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 🏠 Página de Inicio (Home)
+- Página de bienvenida con información del proyecto
+- Navegación principal hacia otras secciones
+- Diseño centrado y responsivo
 
-## Running unit tests
+### 👥 Gestión de Usuarios
+- Listado completo de usuarios obtenidos de API externa
+- Tarjetas de usuario con información detallada:
+  - Datos personales (nombre, email, teléfono)
+  - Información de dirección
+  - Datos de la empresa
+- Estado de carga con delay de 5 segundos
+- Responsive cards con Bootstrap
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### 🔧 Otras Páginas
+- **Perfil**: Gestión del perfil de usuario
+- **Estructuras**: Visualización de estructuras de datos
+- **Documentación**: Documentación del proyecto
 
-## Running end-to-end tests
+## 🚀 Instalación y Configuración
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Prerrequisitos
+- Node.js (versión 18.19.0)
+- npm o yarn
+- Angular CLI 16.2.11
 
-## Further help
+### Instalación
+```bash
+# Clonar el repositorio
+git clone [url-del-repositorio]
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Navegar al directorio
+cd gestion-usuarios-angular
+
+# Instalar dependencias
+npm install
+
+# Iniciar servidor de desarrollo
+npm start
+```
+
+## 💻 Scripts Disponibles
+
+### Servidor de Desarrollo
+```bash
+npm start
+# o
+ng serve
+```
+Navega a `http://localhost:4200/`. La aplicación se recargará automáticamente al cambiar los archivos.
+
+### Construcción
+```bash
+npm run build
+# o
+ng build
+```
+Los artefactos de construcción se almacenarán en el directorio `dist/`.
+
+### Pruebas Unitarias
+```bash
+npm test
+# o
+ng test
+```
+Ejecuta las pruebas unitarias mediante [Karma](https://karma-runner.github.io).
+
+### Modo Watch
+```bash
+npm run watch
+# o
+ng build --watch --configuration development
+```
+
+## 🎨 Estilos y Diseño
+
+### Variables SCSS
+El proyecto utiliza un sistema de variables SCSS centralizadas en `src/scss/variables.scss` que incluye:
+- Paleta de colores personalizada
+- Medidas y espaciados consistentes
+- Mixins reutilizables
+
+### Framework CSS
+- **Bootstrap 5.2.3**: Para componentes y grid system
+- **Font Awesome**: Para iconografía
+- **SCSS**: Para estilos personalizados
+
+## 🔗 API y Servicios
+
+### Servicio de Usuarios
+- **Endpoint**: `https://jsonplaceholder.typicode.com/users`
+- **Método**: GET
+- **Delay**: 5 segundos (simulación de carga)
+- **Interfaz TypeScript**: Tipado completo de datos de usuario
+
+## 📱 Responsive Design
+
+La aplicación está optimizada para:
+- Desktop (1200px+)
+- Tablet (768px - 1199px)
+- Mobile (< 768px)
+
+## 🤝 Contribución
+
+Este proyecto fue desarrollado como parte de una práctica universitaria para la materia de Aplicaciones Móviles.
+
+## 📄 Licencia
+
+Este proyecto es de uso académico y educativo.
+
+## 🆘 Ayuda Adicional
+
+Para obtener más ayuda sobre Angular CLI, usa `ng help` o consulta la [Documentación Oficial de Angular CLI](https://angular.io/cli).
