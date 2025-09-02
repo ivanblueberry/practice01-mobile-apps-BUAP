@@ -1,3 +1,5 @@
+
+
 # 📱 Gestión de Usuarios Angular
 
 Una aplicación web desarrollada con Angular 16 para la gestión y visualización de usuarios, implementando una arquitectura modular con navegación y servicios HTTP.
@@ -38,6 +40,22 @@ src/
 - **Routing**: Angular Router
 - **Styling**: SCSS con variables globales
 - **API**: JSONPlaceholder para datos de usuarios
+
+## 📸 Capturas de Pantalla
+
+### 🖥️ Vista Desktop
+![Página de Inicio](docs/images/home-page.png)
+*Página principal con navegación y diseño responsivo*
+
+![Gestión de Usuarios](docs/images/usuarios-list.png)
+*Lista de usuarios obtenida de la API con loading states*
+
+### 📱 Vista Mobile
+<div align="center">
+  <img src="docs/images/mobile-view.png" alt="Vista móvil" width="300"/>
+</div>
+
+*Diseño adaptativo para dispositivos móviles*
 
 ## 🎯 Páginas y Funcionalidades
 
