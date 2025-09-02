@@ -1,0 +1,104 @@
+// Colores principales
+$primary-color: #F82175;
+$secondary-color: #9139FF;
+$accent-color: #5a52ff;
+
+// Colores de estado
+$success-color: #28a745;
+$warning-color: #ffc107;
+$danger-color: #dc3545;
+$info-color: #17a2b8;
+
+// Colores neutros
+$white: #ffffff;
+$black: #000000;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+
+// Transparencias
+$white-transparent: rgba(255, 255, 255, 0.95);
+$white-transparent-light: rgba(255, 255, 255, 0.98);
+$white-transparent-overlay: rgba(255, 255, 255, 0.1);
+$white-transparent-border: rgba(255, 255, 255, 0.2);
+$black-transparent: rgba(0, 0, 0, 0.1);
+
+// Medidas
+$navbar-height: 80px;
+$border-radius-small: 8px;
+$border-radius-medium: 15px;
+$border-radius-large: 20px;
+$border-radius-xl: 25px;
+
+// Transiciones
+$transition-fast: all 0.15s ease;
+$transition-smooth: all 0.3s ease;
+$transition-slow: all 0.5s ease;
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Sombras
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+$shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.1);
+
+// Z-indexes
+$z-dropdown: 1000;
+$z-sticky: 1020;
+$z-fixed: 1030;
+$z-modal-backdrop: 1040;
+$z-modal: 1050;
+$z-popover: 1060;
+$z-tooltip: 1070;
+
+// Mixins comunes
+@mixin glassmorphism($opacity: 0.95) {
+  background: rgba(255, 255, 255, $opacity);
+  backdrop-filter: blur(10px);
+  border: 1px solid $white-transparent-border;
+}
+
+@mixin gradient-background {
+  background: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
+}
+
+@mixin gradient-text {
+  background: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+@mixin card-hover-effect {
+  transition: $transition-smooth;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-xl;
+  }
+}
+
+@mixin button-hover-effect {
+  transition: $transition-smooth;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@mixin user-gradient {
+  background: linear-gradient(135deg, $primary-color, $secondary-color);
+}
