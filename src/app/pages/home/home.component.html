@@ -1,108 +1,132 @@
-<!-- Menú de navegación -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="#" routerLink="/pages/home">
-      <i class="fas fa-users me-2"></i>
-      Gestión Usuarios Angular
-    </a>
+<div class="home-container">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-10">
+        <div class="welcome-card">
+          <div class="text-center mb-4">
+            <img
+              src="assets/icons/angular-logo.svg"
+              alt="Angular Logo"
+              class="welcome-icon angular-logo"
+            />
+            <h1 class="display-4 fw-bold gradient-title mb-3">
+              ¡Bienvenido a Angular!
+            </h1>
+            <p class="lead text-muted mb-4">
+              Práctica 1: Introducción al uso de Angular
+            </p>
+          </div>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/pages/home" routerLinkActive="active">
-            <i class="fas fa-home me-1"></i>Inicio
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" onclick="alert('Componente desarrollado por Erika')">
-            <i class="fas fa-user me-1"></i>Perfil
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" onclick="alert('Componente desarrollado por Erika')">
-            <i class="fas fa-code me-1"></i>Estructuras
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" onclick="alert('Componente desarrollado por Erika')">
-            <i class="fas fa-book me-1"></i>Documentación
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/pages/usuarios" routerLinkActive="active">
-            <i class="fas fa-users me-1"></i>Usuarios
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- Contenido principal -->
-<div class="container-fluid main-content">
-  <div class="row justify-content-center">
-    <div class="col-lg-8 col-md-10">
-      <div class="welcome-card">
-        <div class="text-center mb-4">
-          <img src="assets/icons/angular-logo.svg" alt="Angular Logo" class="welcome-icon angular-logo">
-          <h1 class="display-4 fw-bold gradient-title mb-3">
-            ¡Bienvenido a Angular!
-          </h1>
-          <p class="lead text-muted mb-4">
-            Práctica 1: Introducción al uso de Angular
-          </p>
-        </div>
-
-        <div class="row g-4">
-          <div class="col-md-6">
-            <div class="feature-card h-100">
-              <div class="feature-icon">
-                <i class="fas fa-cogs"></i>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="feature-card h-100">
+                <div class="feature-icon">
+                  <i class="fas fa-cogs"></i>
+                </div>
+                <h4>Funcionalidades Implementadas</h4>
+                <ul class="list-unstyled">
+                  <li>
+                    <i class="fas fa-check text-success me-2"></i>Múltiples
+                    componentes
+                  </li>
+                  <li>
+                    <i class="fas fa-check text-success me-2"></i>Módulo
+                    independiente
+                  </li>
+                  <li>
+                    <i class="fas fa-check text-success me-2"></i>Servicio HTTP
+                  </li>
+                  <li>
+                    <i class="fas fa-check text-success me-2"></i>Lazy Loading
+                  </li>
+                  <li>
+                    <i class="fas fa-check text-success me-2"></i>Bootstrap
+                    Integration
+                  </li>
+                </ul>
               </div>
-              <h4>Funcionalidades Implementadas</h4>
-              <ul class="list-unstyled">
-                <li><i class="fas fa-check text-success me-2"></i>Múltiples componentes</li>
-                <li><i class="fas fa-check text-success me-2"></i>Módulo independiente</li>
-                <li><i class="fas fa-check text-success me-2"></i>Servicio HTTP</li>
-                <li><i class="fas fa-check text-success me-2"></i>Lazy Loading</li>
-                <li><i class="fas fa-check text-success me-2"></i>Bootstrap Integration</li>
-              </ul>
+            </div>
+
+            <div class="col-md-6">
+              <div class="feature-card h-100">
+                <div class="feature-icon">
+                  <i class="fas fa-user-graduate"></i>
+                </div>
+                <h4>Desarrollado por</h4>
+                <div class="developer-info">
+                  <p class="mb-3">
+                    <strong>Francisco:</strong> Estructura inicial, Home,
+                    Usuarios, Lazy Load, Servicio
+                  </p>
+                  <p class="mb-3">
+                    <strong>Erika:</strong> Perfil, Refactorización del código,
+                    Layout, Estandarización de estilos globales
+                  </p>
+
+                  <!-- ENLACES A PERFILES DE GITHUB -->
+                  <div class="github-profiles mt-3">
+                    <h6 class="text-muted mb-2">
+                      <i class="fab fa-github me-2"></i>Perfiles de GitHub
+                    </h6>
+                    <div class="d-flex flex-wrap gap-2">
+                      <a
+                        href="https://github.com/ivanblueberry"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-outline-dark btn-sm"
+                      >
+                        <i class="fab fa-github me-1"></i>ivanblueberry
+                      </a>
+                      <a
+                        href="https://github.com/ErikaAX08"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-outline-dark btn-sm"
+                      >
+                        <i class="fab fa-github me-1"></i>ErikaAX08
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="col-md-6">
-            <div class="feature-card h-100">
-              <div class="feature-icon">
-                <i class="fas fa-user-graduate"></i>
-              </div>
-              <h4>Desarrollado por</h4>
-              <div class="developer-info">
-                <p class="mb-2">
-                  <strong>Francisco:</strong> Estructura inicial, Home, Usuarios, Lazy Load, Servicio
-                </p>
-                <p class="mb-0">
-                  <strong>Erika:</strong> Perfil, Estructuras, Documentación
-                </p>
-              </div>
+          <!-- ENLACE AL REPOSITORIO DEL PROYECTO -->
+          <div class="text-center mt-4 mb-4">
+            <div class="project-repository">
+              <h5 class="text-muted mb-3">
+                <i class="fab fa-github me-2"></i>Repositorio del Proyecto
+              </h5>
+              <a
+                href="https://github.com/ivanblueberry/practice01-mobile-apps-BUAP"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-github-repo btn-lg"
+              >
+                <i class="fab fa-github me-2"></i>Ver Código Fuente
+                <i class="fas fa-external-link-alt ms-2"></i>
+              </a>
             </div>
           </div>
-        </div>
 
-        <div class="text-center mt-4">
-          <p class="text-muted mb-3">
-            Explora las diferentes secciones usando el menú de navegación
-          </p>
-          <button class="btn btn-gradient-border btn-lg me-3" routerLink="/pages/usuarios">
-            <i class="fas fa-users me-2"></i>Ver Usuarios
-          </button>
-          <button class="btn btn-outline-secondary btn-lg" onclick="alert('Funcionalidad desarrollada por Erika')">
-            <i class="fas fa-info-circle me-2"></i>Más información
-          </button>
+          <div class="text-center mt-4">
+            <p class="text-muted mb-3">
+              Explora las diferentes secciones usando el menú de navegación
+            </p>
+            <button
+              class="btn btn-gradient-border btn-lg me-3"
+              routerLink="/pages/usuarios"
+            >
+              <i class="fas fa-users me-2"></i>Ver Usuarios
+            </button>
+            <button
+              class="btn btn-outline-secondary btn-lg"
+              onclick="alert('Funcionalidad desarrollada por Erika')"
+            >
+              <i class="fas fa-info-circle me-2"></i>Más información
+            </button>
+          </div>
         </div>
       </div>
     </div>
