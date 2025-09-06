@@ -1,0 +1,291 @@
+@import "../../../scss/variables.scss";
+
+// BOTON DE REGRESO
+.btn-back {
+  background: white;
+  border: 1px solid #e3e6f0;
+  color: #5a5c69;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+
+  &:hover {
+    background: #f8f9fc;
+    border-color: #5e72e4;
+    color: #5e72e4;
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 2rem 0 rgba(58, 59, 69, 0.2);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(94, 114, 228, 0.25);
+    color: #5e72e4;
+  }
+
+  i {
+    margin-right: 8px;
+  }
+}
+
+// LOADING SPINNER
+.loading-container {
+  background: white;
+  border: 1px solid #e3e6f0;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+  margin: 2rem 0;
+
+  .spinner-border {
+    width: 3rem;
+    height: 3rem;
+    border-color: rgba(94, 114, 228, 0.3);
+    border-top-color: #5e72e4;
+  }
+
+  .loading-text {
+    color: #5a5c69;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+}
+
+// MENSAJE DE ERROR
+.error-alert {
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #dc3545;
+
+  .btn-retry {
+    background: white;
+    border: 1px solid #e3e6f0;
+    color: #5a5c69;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 0.875rem;
+
+    &:hover {
+      background: #f8f9fc;
+      border-color: #5e72e4;
+      color: #5e72e4;
+    }
+  }
+}
+
+// CONTENEDOR PRINCIPAL DEL PERFIL
+.profile-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+// CARDS PRINCIPALES
+.profile-card {
+  background: white;
+  border: 1px solid #e3e6f0;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0.5rem 2rem 0 rgba(58, 59, 69, 0.2);
+    border-color: #5e72e4;
+  }
+}
+
+// HEADER DE LAS CARDS
+.profile-header {
+  background: #5e72e4;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e3e6f0;
+
+  .profile-title {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    align-items: center;
+
+    i {
+      margin-right: 12px;
+      font-size: 1.3rem;
+    }
+  }
+
+  &.company-header {
+    background: #1cc88a;
+  }
+}
+
+// CUERPO DE LAS CARDS
+.profile-body {
+  background: white;
+  color: #5a5c69;
+  padding: 1.5rem;
+
+  .section-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e3e6f0;
+    display: flex;
+    align-items: center;
+    color: #5a5c69;
+
+    i {
+      margin-right: 10px;
+      color: #5e72e4;
+    }
+  }
+
+  .info-item {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    display: flex;
+    align-items: flex-start;
+
+    .info-label {
+      font-weight: 600;
+      min-width: 120px;
+      display: flex;
+      align-items: center;
+      margin-right: 12px;
+      color: #5a5c69;
+
+      i {
+        margin-right: 8px;
+        width: 16px;
+        text-align: center;
+        font-size: 0.9rem;
+        color: #5e72e4;
+      }
+    }
+
+    .info-value {
+      flex: 1;
+      color: #858796;
+
+      a {
+        color: #5e72e4;
+        text-decoration: none;
+        transition: all 0.3s ease;
+
+        &:hover {
+          text-decoration: underline;
+          color: #3a4bd9;
+        }
+
+        .external-icon {
+          font-size: 0.8em;
+          margin-left: 6px;
+          opacity: 0.7;
+        }
+      }
+
+      em {
+        font-style: italic;
+      }
+    }
+  }
+}
+
+// GRID RESPONSIVO
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+// ANIMACIONES
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-card {
+  animation: fadeInUp 0.6s ease-out;
+
+  &:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+
+  &:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+}
+
+// RESPONSIVE DESIGN
+@media (max-width: 768px) {
+  .container-fluid {
+    padding: 1rem;
+  }
+
+  .profile-body {
+    padding: 1.25rem;
+  }
+
+  .profile-header {
+    padding: 1.25rem;
+
+    .profile-title {
+      font-size: 1.3rem;
+    }
+  }
+
+  .info-item {
+    flex-direction: column;
+
+    .info-label {
+      min-width: auto;
+      margin-bottom: 0.25rem;
+      margin-right: 0;
+    }
+  }
+
+  .btn-back {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .profile-title {
+    font-size: 1.25rem !important;
+
+    i {
+      font-size: 1.1rem;
+    }
+  }
+
+  .section-title {
+    font-size: 1.1rem !important;
+  }
+
+  .info-item {
+    font-size: 0.9rem;
+  }
+}
