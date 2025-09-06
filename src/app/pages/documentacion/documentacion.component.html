@@ -1,1 +1,266 @@
-<p>documentacion works!</p>
+<div class="container-fluid py-4" style="margin-top: 100px;">
+  <!-- HEADER DE LA SECCION -->
+  <div class="row mb-5">
+    <div class="col-12">
+      <div class="card border-0 shadow-lg">
+        <div
+          class="card-body text-center bg-gradient"
+          style="
+            color: white;
+          "
+        >
+          <h1 class="display-4 mb-3">
+            <i class="bi bi-book-fill me-3"></i>
+            Documentación Técnica
+          </h1>
+          <p class="lead mb-4">
+            Recursos y tecnologías utilizadas en el desarrollo de aplicaciones
+            modernas
+          </p>
+
+          <!-- ENLACE A DOCUMENTACION OFICIAL DE IONIC -->
+          <div class="mt-4">
+            <button
+              class="btn btn-light btn-lg px-4 py-3 rounded-pill shadow"
+              (click)="abrirEnlace(enlaceIonic)"
+              type="button"
+            >
+              <i class="bi bi-box-arrow-up-right me-2"></i>
+              Documentación Oficial de Ionic
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARRUSEL DE TECNOLOGIAS -->
+  <div class="row mb-5">
+    <div class="col-12">
+      <div class="card border-0 shadow-lg">
+        <div class="card-header bg-light border-0 py-3">
+          <h3 class="mb-0 text-center">
+            <i class="bi bi-stack me-2"></i>
+            Stack Tecnológico
+          </h3>
+        </div>
+
+        <div class="card-body p-0">
+          <!-- CARRUSEL PRINCIPAL -->
+          <div
+            id="technologyCarousel"
+            class="carousel slide"
+            data-bs-ride="false"
+          >
+            <div class="carousel-inner">
+              <div
+                class="carousel-item"
+                *ngFor="
+                  let tech of tecnologias;
+                  let i = index;
+                  trackBy: trackByTecnologia
+                "
+                [class.active]="i === currentSlide"
+              >
+                <div class="row g-0 align-items-center min-vh-50">
+                  <!-- IMAGEN DE LA TECNOLOGIA -->
+                  <div class="col-lg-4 text-center py-5">
+                    <div
+                      class="tech-image-container mx-auto"
+                      [style.border-color]="tech.color"
+                    >
+                      <img
+                        [src]="tech.imagen"
+                        [alt]="tech.nombre"
+                        class="tech-image"
+                        onerror="this.src='https://via.placeholder.com/150x150/cccccc/666666?text=' + this.alt"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- INFORMACION DE LA TECNOLOGIA -->
+                  <div class="col-lg-8 p-5">
+                    <div class="tech-info">
+                      <!-- TITULO Y VERSION -->
+                      <div class="d-flex align-items-center mb-3">
+                        <h2 class="tech-title mb-0" [style.color]="tech.color">
+                          {{ tech.nombre }}
+                        </h2>
+                        <span
+                          class="badge rounded-pill ms-3"
+                          [style.background-color]="tech.color"
+                        >
+                          v{{ tech.version }}
+                        </span>
+                      </div>
+
+                      <!-- DESCRIPCION -->
+                      <p class="lead text-muted mb-4">{{ tech.descripcion }}</p>
+
+                      <!-- CARACTERISTICAS -->
+                      <div class="mb-4">
+                        <h5 class="mb-3">Características principales:</h5>
+                        <div class="row">
+                          <div
+                            class="col-md-6"
+                            *ngFor="let caracteristica of tech.caracteristicas"
+                          >
+                            <div class="d-flex align-items-center mb-2">
+                              <i
+                                class="bi bi-check-circle-fill me-2"
+                                [style.color]="tech.color"
+                              ></i>
+                              <span>{{ caracteristica }}</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- BOTON DE ENLACE -->
+                      <button
+                        class="btn btn-lg px-4 py-2 rounded-pill"
+                        [style.background-color]="tech.color"
+                        [style.border-color]="tech.color"
+                        style="color: white"
+                        (click)="abrirEnlace(tech.enlace)"
+                        type="button"
+                      >
+                        <i class="bi bi-globe me-2"></i>
+                        Visitar {{ tech.nombre }}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CONTROLES DEL CARRUSEL -->
+            <button
+              class="carousel-control-prev"
+              type="button"
+              (click)="prevSlide()"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              (click)="nextSlide()"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INDICADORES DEL CARRUSEL -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="d-flex justify-content-center">
+        <div class="carousel-indicators-custom">
+          <button
+            *ngFor="let tech of tecnologias; let i = index"
+            type="button"
+            class="indicator-btn"
+            [class.active]="i === currentSlide"
+            [style.background-color]="
+              i === currentSlide ? tech.color : '#dee2e6'
+            "
+            (click)="goToSlide(i)"
+            [title]="tech.nombre"
+          >
+            <img
+              [src]="tech.imagen"
+              [alt]="tech.nombre"
+              class="indicator-icon"
+              onerror="this.style.display='none'"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRID DE TECNOLOGIAS (VISTA ALTERNATIVA) -->
+  <div class="row mb-5">
+    <div class="col-12">
+      <div class="card border-0 shadow">
+        <div class="card-header bg-light border-0 py-3">
+          <h4 class="mb-0 text-center">
+            <i class="bi bi-grid-3x3-gap-fill me-2"></i>
+            Vista Rápida de Tecnologías
+          </h4>
+        </div>
+        <div class="card-body">
+          <div class="row g-4 justify-content-center">
+            <div
+              class="col-lg-2 col-md-4 col-sm-6"
+              *ngFor="let tech of tecnologias; trackBy: trackByTecnologia"
+            >
+              <div
+                class="tech-card text-center h-100 p-3 rounded shadow-sm"
+                [style.border-top]="'4px solid ' + tech.color"
+                (click)="abrirEnlace(tech.enlace)"
+                style="cursor: pointer; transition: all 0.3s ease"
+              >
+                <img
+                  [src]="tech.imagen"
+                  [alt]="tech.nombre"
+                  class="tech-mini-icon mb-2"
+                  onerror="this.src='https://via.placeholder.com/40x40/cccccc/666666?text=' + this.alt"
+                />
+                <h6 class="mb-1" [style.color]="tech.color">
+                  {{ tech.nombre }}
+                </h6>
+                <small class="text-muted">v{{ tech.version }}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INFORMACION ADICIONAL -->
+  <div class="row">
+    <div class="col-12">
+      <div class="alert alert-info border-0 shadow">
+        <div class="d-flex align-items-start">
+          <i class="bi bi-info-circle-fill fs-4 me-3 mt-1"></i>
+          <div>
+            <h5 class="alert-heading mb-2">¡Mantente Actualizado!</h5>
+            <p class="mb-2">
+              El desarrollo de aplicaciones móviles evoluciona constantemente.
+              Es importante mantenerse al día con las últimas versiones y
+              mejores prácticas de cada tecnología.
+            </p>
+            <ul class="list-unstyled mb-0">
+              <li>
+                <i class="bi bi-arrow-right me-2"></i>Revisa regularmente las
+                notas de versión
+              </li>
+              <li>
+                <i class="bi bi-arrow-right me-2"></i>Participa en la comunidad
+                de desarrolladores
+              </li>
+              <li>
+                <i class="bi bi-arrow-right me-2"></i>Prueba las nuevas
+                características en proyectos de prueba
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

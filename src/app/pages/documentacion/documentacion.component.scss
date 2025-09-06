@@ -1,0 +1,528 @@
+// ESTILOS PARA EL COMPONENTE DE DOCUMENTACION - ESTILO COINCIDENTE CON USUARIOS
+
+.container-fluid {
+  background-color: #f8f9ff;
+  min-height: 100vh;
+}
+
+// HEADER DE LA SECCION - ESTILO SIMILAR A USUARIOS
+.bg-gradient {
+  background: linear-gradient(135deg, #8b7cf8 0%, #6c5ce7 100%) !important;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px !important;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        circle at 20% 30%,
+        rgba(255, 255, 255, 0.1) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 80% 70%,
+        rgba(255, 255, 255, 0.05) 0%,
+        transparent 50%
+      );
+    opacity: 0.8;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// TARJETAS PRINCIPALES - ESTILO SIMILAR A LAS TARJETAS DE USUARIOS
+.card {
+  border: none !important;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(139, 124, 248, 0.08);
+  transition: all 0.3s ease;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(139, 124, 248, 0.15);
+  }
+
+  .card-header {
+    border: none !important;
+    border-radius: 20px 20px 0 0 !important;
+    padding: 20px 30px;
+
+    h3,
+    h4 {
+      color: #6c5ce7;
+      font-weight: 600;
+      font-size: 1.4rem;
+    }
+  }
+
+  .card-body {
+    padding: 30px;
+  }
+}
+
+// ESTILOS DEL CARRUSEL - ADAPTADO AL NUEVO DISEÑO
+.carousel {
+  .carousel-inner {
+    border-radius: 0 0 20px 20px;
+
+    .carousel-item {
+      transition: transform 0.6s ease-in-out;
+      min-height: 450px;
+    }
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 5%;
+
+    border-radius: 0;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: linear-gradient(
+        135deg,
+        rgba(139, 124, 248, 0.2) 0%,
+        rgba(108, 92, 231, 0.2) 100%
+      );
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-size: 24px 24px;
+      filter: invert(0.3) sepia(1) saturate(2) hue-rotate(230deg)
+        brightness(0.8);
+    }
+  }
+}
+
+// CONTENEDOR DE IMAGEN DE TECNOLOGIA - ESTILO MODERNO
+.tech-image-container {
+  width: 180px;
+  height: 180px;
+  border: 3px solid #e8e5ff;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+  box-shadow: 0 10px 30px rgba(139, 124, 248, 0.12);
+  transition: all 0.4s ease;
+
+  &:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 20px 50px rgba(139, 124, 248, 0.2);
+    border-color: #8b7cf8;
+  }
+
+  .tech-image {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+  }
+}
+
+// INFORMACION DE TECNOLOGIA
+.tech-info {
+  .tech-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #6c5ce7 0%, #8b7cf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .lead {
+    color: #74767e;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  h5 {
+    color: #6c5ce7;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+}
+
+// INDICADORES PERSONALIZADOS DEL CARRUSEL - ESTILO USUARIOS
+.carousel-indicators-custom {
+  display: flex;
+  gap: 12px;
+  padding: 20px 30px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 25px;
+  box-shadow: 0 8px 25px rgba(139, 124, 248, 0.12);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(139, 124, 248, 0.1);
+
+  .indicator-btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 18px;
+    border: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #f8f9ff 0%, #ededff 100%);
+
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(139, 124, 248, 0.2);
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+    }
+
+    &.active {
+      transform: scale(1.15);
+      box-shadow: 0 12px 30px rgba(139, 124, 248, 0.25);
+      border-color: #8b7cf8;
+      background: linear-gradient(135deg, #ffffff 0%, #f0efff 100%);
+    }
+
+    .indicator-icon {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.1));
+    }
+  }
+}
+
+// TARJETAS DE TECNOLOGIA (VISTA GRID) - ESTILO USUARIOS
+.tech-card {
+  background: white;
+  border: 1px solid rgba(139, 124, 248, 0.1);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(139, 124, 248, 0.15) !important;
+    border-color: #8b7cf8;
+
+    .tech-mini-icon {
+      transform: scale(1.2) rotate(10deg);
+    }
+  }
+
+  .tech-mini-icon {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.1));
+  }
+
+  h6 {
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  small {
+    color: #9ca3af;
+    font-weight: 500;
+  }
+}
+
+// ESTILOS PARA BOTONES - ESTILO MODERNO
+.btn {
+  border-radius: 15px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: left 0.5s;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+    &::before {
+      left: 100%;
+    }
+  }
+
+  &.btn-light {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+    color: #6c5ce7;
+    border: 2px solid rgba(139, 124, 248, 0.2);
+
+    &:hover {
+      background: linear-gradient(135deg, #f8f9ff 0%, #ededff 100%);
+      border-color: #8b7cf8;
+      color: #5a4fcf;
+    }
+  }
+}
+
+// BADGES PERSONALIZADOS - ESTILO USUARIOS
+.badge {
+  font-size: 0.8rem;
+  padding: 8px 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 12px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.7) 100%
+  );
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+// ALERTAS MEJORADAS - ESTILO COHERENTE
+.alert {
+  background: linear-gradient(
+    135deg,
+    rgba(139, 124, 248, 0.05) 0%,
+    rgba(108, 92, 231, 0.05) 100%
+  );
+  border: 1px solid rgba(139, 124, 248, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+
+  .alert-heading {
+    color: #6c5ce7;
+    font-weight: 600;
+  }
+
+  .bi-info-circle-fill {
+    color: #8b7cf8;
+  }
+
+  .bi-arrow-right {
+    color: #8b7cf8;
+  }
+}
+
+// ICONOS CON ANIMACIONES SUAVES
+.bi {
+  transition: all 0.2s ease;
+}
+
+.card:hover .bi,
+.btn:hover .bi,
+.tech-card:hover .bi {
+  transform: scale(1.1);
+  filter: drop-shadow(0 2px 4px rgba(139, 124, 248, 0.3));
+}
+
+// RESPONSIVE DESIGN MEJORADO
+@media (max-width: 768px) {
+  .tech-image-container {
+    width: 140px;
+    height: 140px;
+    border-radius: 20px;
+
+    .tech-image {
+      width: 70px;
+      height: 70px;
+    }
+  }
+
+  .tech-info .tech-title {
+    font-size: 1.8rem;
+  }
+
+  .carousel-indicators-custom {
+    padding: 15px 20px;
+    gap: 8px;
+
+    .indicator-btn {
+      width: 45px;
+      height: 45px;
+      border-radius: 15px;
+
+      .indicator-icon {
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
+
+  .display-4 {
+    font-size: 1.8rem;
+  }
+
+  .card-body {
+    padding: 20px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-indicators-custom {
+    padding: 12px 15px;
+    gap: 6px;
+    border-radius: 20px;
+
+    .indicator-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+
+      .indicator-icon {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+
+  .tech-card {
+    border-radius: 12px;
+  }
+
+  .card {
+    border-radius: 16px;
+  }
+}
+
+// EFECTOS DE HOVER ADICIONALES
+.tech-card:hover,
+.card:hover {
+  .tech-mini-icon,
+  .tech-image {
+    animation: gentle-bounce 0.6s ease;
+  }
+}
+
+@keyframes gentle-bounce {
+  0%,
+  20%,
+  60%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  80% {
+    transform: translateY(-4px);
+  }
+}
+
+// MEJORAS PARA ACCESIBILIDAD
+.carousel-control-prev:focus,
+.carousel-control-next:focus,
+.indicator-btn:focus,
+.tech-card:focus {
+  outline: 2px solid #8b7cf8;
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+// LOADING STATES ACTUALIZADOS
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    margin: -12px 0 0 -12px;
+    border: 3px solid rgba(139, 124, 248, 0.2);
+    border-top: 3px solid #8b7cf8;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// GRADIENTES ACTUALIZADOS PARA CADA TECNOLOGIA
+.gradient-ionic {
+  background: linear-gradient(135deg, #3880ff 0%, #5260ff 100%);
+}
+
+.gradient-angular {
+  background: linear-gradient(135deg, #dd0031 0%, #c3002f 100%);
+}
+
+.gradient-typescript {
+  background: linear-gradient(135deg, #3178c6 0%, #2b6cb0 100%);
+}
+
+.gradient-nodejs {
+  background: linear-gradient(135deg, #339933 0%, #2d7f32 100%);
+}
+
+.gradient-npm {
+  background: linear-gradient(135deg, #cb3837 0%, #a91e22 100%);
+}
+
+// EFECTOS DE GLASSMORPHISM SUTIL
+.carousel-indicators-custom,
+.badge {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+// SOMBRAS CONSISTENTES CON EL DISEÑO DE USUARIOS
+.card,
+.tech-card,
+.carousel-indicators-custom {
+  box-shadow: 0 8px 25px rgba(139, 124, 248, 0.08);
+}
+
+.card:hover,
+.tech-card:hover {
+  box-shadow: 0 15px 40px rgba(139, 124, 248, 0.15);
+}
+
+// ESPACIADO CONSISTENTE
+.container-fluid {
+  padding: 30px 20px;
+}
+
+.row {
+  margin-bottom: 25px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
