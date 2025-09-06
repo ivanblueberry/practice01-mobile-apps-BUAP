@@ -1,1 +1,229 @@
-<p>estructuras works!</p>
+<div class="container-fluid py-4" style="margin-top: 100px">
+  <!-- HEADER SIMPLE -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body text-center text-white py-4"
+             style="background: #bba6ff !important; border-radius: 8px;">
+          <h1 class="display-4 mb-2" style="font-size: 1.875rem; font-weight: 600; color: white;">
+            <i class="bi bi-diagram-3-fill me-2"></i>
+            Estructura de Componentes
+          </h1>
+          <p class="lead mb-0" style="font-size: 1rem; color: white; opacity: 0.9;">
+            Arquitectura y organización de todos los componentes de la aplicación
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ESTADISTICAS SIMPLES -->
+  <div class="row mb-5">
+    <div class="col-md-3 col-6 mb-3">
+      <div class="card text-center">
+        <div class="card-body py-4">
+          <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
+            <i class="bi bi-collection-fill"></i>
+          </div>
+          <h3 class="text-primary mb-1">{{ estadisticas.totalComponentes }}</h3>
+          <p class="text-muted mb-0">TOTAL COMPONENTES</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6 mb-3">
+      <div class="card text-center">
+        <div class="card-body py-4">
+          <div class="bg-info text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
+            <i class="bi bi-file-earmark-fill"></i>
+          </div>
+          <h3 class="text-info mb-1">{{ estadisticas.componentesPagina }}</h3>
+          <p class="text-muted mb-0">PÁGINAS</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6 mb-3">
+      <div class="card text-center">
+        <div class="card-body py-4">
+          <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
+            <i class="bi bi-layout-text-window-reverse"></i>
+          </div>
+          <h3 class="text-success mb-1">{{ estadisticas.componentesLayout }}</h3>
+          <p class="text-muted mb-0">LAYOUT</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6 mb-3">
+      <div class="card text-center">
+        <div class="card-body py-4">
+          <div class="bg-warning text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <h3 class="text-warning mb-1">{{ estadisticas.componentesPrincipales }}</h3>
+          <p class="text-muted mb-0">PRINCIPALES</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TITULO DE SECCION -->
+  <div class="row mb-3">
+    <div class="col-12">
+      <h4 class="mb-0" style="color: #1f2937; font-weight: 600;">
+        Listado Detallado de Componentes
+      </h4>
+    </div>
+  </div>
+
+  <!-- LISTA ESTILO TABLA -->
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body p-0">
+          <div *ngFor="let componente of componentes; trackBy: trackByComponente; let i = index"
+               class="border-bottom p-4"
+               [class.border-0]="i === componentes.length - 1">
+
+            <div class="row align-items-start">
+              <!-- COLUMNA IZQUIERDA - INFO BÁSICA -->
+              <div class="col-lg-6 mb-3 mb-lg-0">
+                <!-- NOMBRE Y TIPO -->
+                <div class="d-flex align-items-center mb-3">
+                  <span class="badge me-2" [class]="'bg-' + obtenerColorTipo(componente.tipo)">
+                    {{ componente.tipo }}
+                  </span>
+                  <h5 class="fw-bold mb-0">{{ componente.nombre }}</h5>
+                </div>
+
+                <!-- SELECTOR -->
+                <div class="mb-2">
+                  <small class="text-muted">
+                    <i class="bi bi-tag me-1"></i>
+                    <code>{{ componente.selector }}</code>
+                  </small>
+                </div>
+
+                <!-- RUTA -->
+                <div class="mb-3">
+                  <small class="text-muted">
+                    <i class="bi bi-folder me-1"></i>
+                    {{ componente.ruta }}
+                  </small>
+                </div>
+
+                <!-- DESCRIPCIÓN -->
+                <p class="mb-3" style="color: #1f2937;">{{ componente.descripcion }}</p>
+
+                <!-- DEPENDENCIAS -->
+                <div>
+                  <strong style="color: #1f2937; font-size: 0.875rem;">DEPENDENCIAS</strong>
+                  <div class="mt-1">
+                    <span *ngFor="let dep of componente.dependencias" class="badge bg-secondary me-1 mb-1">
+                      {{ dep }}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- COLUMNA DERECHA - FUNCIONALIDADES -->
+              <div class="col-lg-6">
+                <strong style="color: #1f2937; font-size: 0.875rem;">FUNCIONALIDADES</strong>
+                <ul class="list-unstyled mt-2 mb-0">
+                  <li *ngFor="let func of componente.funcionalidad" class="mb-1">
+                    <i class="bi bi-check-circle-fill me-2"></i>
+                    {{ func }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIAGRAMA DE ARQUITECTURA -->
+  <div class="row mt-5 mb-3">
+    <div class="col-12">
+      <h4 class="mb-0" style="color: #1f2937; font-weight: 600;">
+        Diagrama de Arquitectura
+      </h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <!-- COMPONENTE PRINCIPAL -->
+          <div class="row mb-4">
+            <div class="col-12">
+              <div class="card bg-warning bg-opacity-10">
+                <div class="card-body text-center py-3">
+                  <h5 class="text-warning mb-1">
+                    <i class="bi bi-star-fill me-2"></i>
+                    AppComponent
+                  </h5>
+                  <small class="text-muted">Componente Raíz</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LAYOUT COMPONENT -->
+          <div class="row mb-4">
+            <div class="col-12">
+              <div class="card bg-success bg-opacity-10">
+                <div class="card-body text-center py-3">
+                  <h5 class="text-success mb-1">
+                    <i class="bi bi-layout-text-window-reverse me-2"></i>
+                    HeaderComponent
+                  </h5>
+                  <small class="text-muted">Layout Compartido</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PAGE COMPONENTS -->
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-6 mb-3" *ngFor="let pagina of obtenerComponentesPorTipo('Página')">
+              <div class="card bg-primary bg-opacity-10">
+                <div class="card-body text-center py-3">
+                  <h6 class="text-primary mb-1">
+                    <i class="bi bi-file-earmark-fill me-1"></i>
+                    {{ pagina.nombre.replace("Component", "") }}
+                  </h6>
+                  <small class="text-muted">Página</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INFORMACIÓN ADICIONAL -->
+  <div class="row mt-4">
+    <div class="col-12">
+      <div class="alert alert-info">
+        <div class="d-flex align-items-start">
+          <i class="bi bi-info-circle-fill fs-5 me-3 mt-1"></i>
+          <div>
+            <h5 class="alert-heading mb-2">Información sobre la Arquitectura</h5>
+            <p class="mb-0">
+              Esta aplicación sigue una arquitectura modular de Angular con
+              separación clara entre componentes de páginas, layout y servicios.
+              Utiliza lazy loading para optimizar el rendimiento y mantiene una
+              estructura organizada con módulos específicos para cada
+              funcionalidad.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
